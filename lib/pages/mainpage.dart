@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_5/pages/fakepage.dart';
 import 'package:flutter_application_5/store/flags.dart';
 
 import '../repasitory/infoget.dart';
@@ -51,50 +52,61 @@ class _HomePageState extends State<HomePage> {
                       itemBuilder: (context, index) {
                         return Column(
                           children: [
-                            Container(
-                              height: 50,
-                              width: double.infinity,
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 24),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(24),
-                                  color: Colors.white),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    height: 40,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: NetworkImage(
-                                          returnFlag(index),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (_) {
+                                  return MyWidget(
+                                    data: data[index],
+                                    flag: returnFlag(index),
+                                  );
+                                }));
+                              },
+                              child: Container(
+                                height: 50,
+                                width: double.infinity,
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 24),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24),
+                                    color: Colors.white),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: NetworkImage(
+                                            returnFlag(index),
+                                          ),
                                         ),
+                                        borderRadius: const BorderRadius.only(
+                                          topRight: Radius.circular(12),
+                                          bottomLeft: Radius.circular(12),
+                                        ),
+                                        color: Colors.blue,
                                       ),
-                                      borderRadius: const BorderRadius.only(
-                                        topRight: Radius.circular(12),
-                                        bottomLeft: Radius.circular(12),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    Text(
+                                      data[index].code ?? '',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 24,
                                       ),
-                                      color: Colors.blue,
                                     ),
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Text(
-                                    data[index].code ?? '',
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 24,
+                                    const SizedBox(width: 10),
+                                    Text(
+                                      data[index].title ?? '',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: 12,
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(width: 10),
-                                  Text(
-                                    data[index].title ?? '',
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                             const Padding(

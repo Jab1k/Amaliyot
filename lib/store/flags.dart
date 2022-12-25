@@ -9,6 +9,7 @@ returnFlag(int index) {
     'https://www.worldometers.info/img/flags/eg-flag.gif',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/2560px-Flag_of_Europe.svg.png',
     'https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/640px-Flag_of_the_United_Kingdom.svg.png',
+    'https://www.worldometers.info/img/flags/ic-flag.gif',
     'https://www.worldometers.info/img/flags/ja-flag.gif',
     'https://www.worldometers.info/img/flags/ks-flag.gif',
     'https://www.worldometers.info/img/flags/ku-flag.gif',
